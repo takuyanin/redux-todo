@@ -4,9 +4,11 @@ import { Button } from 'react-bootstrap'
 
 const Link = ({ active, children, onClick }) => (
   <Button
+    variant='outline-success'
     onClick={onClick}
-    disabled={active}
     style={{
+      backgroundColor: active ? '#28a745' : '',
+      color: active ? '#fff' : '',
       marginLeft: '4px'
     }}
   >
