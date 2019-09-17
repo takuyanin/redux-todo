@@ -6,7 +6,12 @@ const Todo = ({ onClick, completed, text }) => (
   <li
     onClick={onClick}
     style={{
-      textDecoration: completed ? 'line-through' : 'none',
+      listStyleType: 'none',
+      borderBottom: '1px solid #ddd',
+      width: '300px',
+      lineHeight: '40px',
+      textDecoration: completed ? 'line-through' : '',
+      color: completed ? '#f34854' : '',
     }}
   >
     {text}
