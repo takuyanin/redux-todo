@@ -7,7 +7,7 @@ const AddTodo = ({ dispatch }) => {
   let input
 
   return (
-    <div>
+    <div className='addTodo'>
       <Form
         onSubmit={e => {
           e.preventDefault()
@@ -21,7 +21,7 @@ const AddTodo = ({ dispatch }) => {
         <FormControl
           placeholder="Write something down"
           ref={node => (input = node)}
-          style={{width: '300px', display: 'inline-block'}}
+          style={{width: '500px', display: 'inline-block'}}
         />
         <Button variant="outline-secondary"
           type='submit'

@@ -3,7 +3,7 @@ import FilterLink from '../containers/FilterLink'
 import { VisibilityFilters } from '../actions'
 
 const ShowSelect = () => (
-  <div>
+  <div className='showSelect'>
     <span>Show: </span>
     <FilterLink filter={VisibilityFilters.SHOW_ALL}>All</FilterLink>
     <FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>Active</FilterLink>
