@@ -1,19 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import DoneBtn from './DoneBtn';
+
 const Todo = ({ onClick, completed, text }) => (
   <li
-    onClick={onClick}
+    className='todo'
     style={{
-      listStyleType: 'none',
-      borderBottom: '1px solid #ddd',
-      width: '300px',
-      lineHeight: '40px',
       textDecoration: completed ? 'line-through' : '',
       color: completed ? '#f34854' : '',
     }}
   >
     {text}
+    <DoneBtn onClick={onClick} completed={completed} />
   </li>
 )
 
