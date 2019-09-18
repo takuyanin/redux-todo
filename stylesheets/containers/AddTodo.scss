@@ -1,12 +1,12 @@
 .addTodo {
-  margin-top: 100px;
-  form {
-    input {
-      width: 500px;
-      display: inline-block;
-    }
+  padding-top: 100px;
+  form.ui.form {
+    display: flex;
     button {
-      vertical-align: unset;
+      width: 150px;
+      height: 37.2px;
+      background-color: #555;
+      color: #fff;
     }
   }
 }

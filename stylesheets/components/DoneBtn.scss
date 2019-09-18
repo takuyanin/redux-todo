@@ -1,5 +1,8 @@
 .done {
-  button {
+  display: inline-block;
+  button.ui.button {
+    background-color: #343a40;
+    color: #fff;
     width: 85px;
   }
 }

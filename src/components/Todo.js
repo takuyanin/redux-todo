@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import HandleTodo from '../containers/HandleTodo'
-// import DoneBtn from './DoneBtn';
 
 const Todo = props => (
   <li
@@ -14,7 +13,6 @@ const Todo = props => (
   >
     {props.text}
     <HandleTodo {...props} />
-    {/* <DoneBtn completed={completed} /> */}
   </li>
 )
 

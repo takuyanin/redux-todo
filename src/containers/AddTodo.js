@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
-import { Form, FormControl, Button } from 'react-bootstrap'
+import { Form, Button } from 'semantic-ui-react'
 
 const AddTodo = ({ dispatch }) => {
   let input
@@ -18,11 +18,11 @@ const AddTodo = ({ dispatch }) => {
           input.value = ''
         }}
       >
-        <FormControl
+        <input
           placeholder="New Todo"
           ref={node => (input = node)}
         />
-        <Button variant="outline-secondary" type='submit'>
+        <Button type='submit'>
           Add Todo
         </Button>
       </Form>

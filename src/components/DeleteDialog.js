@@ -1,66 +1,44 @@
-import React, { Component } from 'react'
-import {
-  Button,
-  Header,
-  Modal,
-  Icon,
-} from 'semantic-ui-react'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button, Header, Modal, Icon } from 'semantic-ui-react'
 
-class DeleteDialog extends Component {
+class DeleteDialog extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      open: false,
+      modalOpen: false,
     }
-    this.ModalOpen = this.ModalOpen.bind(this)
-    this.close = this.close.bind(this)
-    this.Delete = this.Delete.bind(this)
+    this.handleClose = this.handleClose.bind(this)
+    this.handleOpen = this.handleOpen.bind(this)
   }
-  ModalOpen() {
-    this.setState({ open: true })
+
+  handleOpen () {
+    this.setState({ modalOpen: true })
   }
-  close() {
-    this.setState({ open: false })
+
+  handleClose () {
+    this.setState({ modalOpen: false })
   }
-  Delete() {
-    this.props.Delete(null, this.props.task)
-  }
+
   render() {
     return (
       <Modal
-        trigger={
-          <Button
-            color="red"
-            onClick={this.ModalOpen}
-          >
-            削除
-          </Button>
-        }
-        basic
-        size="small"
-        open={this.state.open}
+        trigger={<Button color="pink" onClick={this.handleOpen}>Delete</Button>}
+        open={this.state.modalOpen}
+        onClose={this.handleClose}
+        basic size="small"
+        className='delete-modal'
       >
-        <Header
-          icon="tasks"
-          content="タスク削除"
-        />
+        <Header icon="tasks" content="Delete Todo" />
         <Modal.Content>
-          <p>「{this.props.task.value}」タスクを削除してもよろしいですか？</p>
+          <p>「{this.props.text}」Is it okay to delete this todo?</p>
         </Modal.Content>
         <Modal.Actions>
-          <Button
-            basic
-            inverted
-            onClick={this.close}
-          >
-            <Icon name="remove" /> いいえ
+          <Button basic inverted onClick={this.handleClose}>
+            <Icon name="remove" /> No
           </Button>
-          <Button
-            color="red"
-            inverted
-            onClick={this.Delete}
-          >
-            <Icon name="checkmark" /> はい
+          <Button color="red" inverted onClick={this.props.onClick}>
+            <Icon name="checkmark" /> Yes
           </Button>
         </Modal.Actions>
       </Modal>
@@ -69,8 +47,8 @@ class DeleteDialog extends Component {
 }
 
 DeleteDialog.propTypes = {
-  task: React.PropTypes.object,
-  Delete: React.PropTypes.func,
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 }
 
 export default DeleteDialog

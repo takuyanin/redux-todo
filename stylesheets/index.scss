@@ -1,8 +1,6 @@
-$background-color: #eee;
 $text-color: #444;
 
 body {
-  background-color: $background-color;
   color: $text-color;
   margin: 0;
 }
@@ -13,3 +11,6 @@ body {
 @import 'components/Todo';
 @import 'components/DoneBtn';
 @import 'containers/AddTodo';
+@import 'components/Link';
+@import 'components/DeleteDialog';
+@import 'containers/HandleTodo';
