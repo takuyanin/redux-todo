@@ -5,6 +5,17 @@ export const addTodo = text => ({
   text
 })
 
+export const deleteTodo = id => ({
+  type: 'DELETE_TODO',
+  id
+})
+
+export const updateTodo = (id, text) => ({
+  type: 'UPDATE_TODO',
+  id,
+  text
+})
+
 export const setVisibilityFilter = filter => ({
   type: 'SET_VISIBILITY_FILTER',
   filter

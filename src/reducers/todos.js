@@ -10,10 +10,15 @@ const todos = (state = [], action) => {
         },
       ]
     case 'TOGGLE_TODO':
-      console.log(state)
       return state.map(todo =>
         todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
       )
+    case 'UPDATE_TODO':
+      return state.map(todo =>
+        todo.id === action.id ? { ...todo, text: action.text } : todo
+      )
+    case 'DELETE_TODO':
+      return state.filter((todo, i) => todo.id !== action.id)
     default:
       return state
   }

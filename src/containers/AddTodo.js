@@ -19,14 +19,10 @@ const AddTodo = ({ dispatch }) => {
         }}
       >
         <FormControl
-          placeholder="Write something down"
+          placeholder="New Todo"
           ref={node => (input = node)}
-          style={{width: '500px', display: 'inline-block'}}
         />
-        <Button variant="outline-secondary"
-          type='submit'
-          style={{ verticalAlign: 'unset' }}
-        >
+        <Button variant="outline-secondary" type='submit'>
           Add Todo
         </Button>
       </Form>

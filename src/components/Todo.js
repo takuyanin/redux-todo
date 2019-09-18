@@ -1,23 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import DoneBtn from './DoneBtn';
+import HandleTodo from '../containers/HandleTodo'
+// import DoneBtn from './DoneBtn';
 
-const Todo = ({ onClick, completed, text }) => (
+const Todo = props => (
   <li
     className='todo'
     style={{
-      textDecoration: completed ? 'line-through' : '',
-      color: completed ? '#f34854' : '',
+      textDecoration: props.completed ? 'line-through' : '',
+      color: props.completed ? '#f34854' : '',
     }}
   >
-    {text}
-    <DoneBtn onClick={onClick} completed={completed} />
+    {props.text}
+    <HandleTodo {...props} />
+    {/* <DoneBtn completed={completed} /> */}
   </li>
 )
 
 Todo.propTypes = {
-  onClick: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired
 }
